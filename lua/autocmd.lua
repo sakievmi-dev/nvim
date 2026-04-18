@@ -4,3 +4,26 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.hl.on_yank()
   end,
 })
+
+-- Different indents for filetypes
+local augroup = vim.api.nvim_create_augroup("setIndent", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup,
+  pattern = { "javascript", "typescript", "lua", "css", "cpp" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.expandtab = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup,
+  pattern = {"python", "css"},
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.expandtab = true
+  end,
+})
