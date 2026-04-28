@@ -6,6 +6,9 @@ map("", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Netrw (File Manager)
+-- map("", "<leader>f", "<cmd>Lexplore<CR>")
+
 -- Misc
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 

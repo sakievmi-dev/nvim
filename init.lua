@@ -5,3 +5,6 @@ _G.map = vim.keymap.set
 require("options")
 require("mappings")
 require("autocmd")
+
+-- LSP settings
+require("lsp.init")

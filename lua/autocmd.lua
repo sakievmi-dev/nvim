@@ -8,9 +8,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Different indents for filetypes
 local augroup = vim.api.nvim_create_augroup("setIndent", { clear = true })
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("FileType", { -- 2 Spaces
   group = augroup,
   pattern = { "javascript", "typescript", "lua", "css", "cpp" },
+
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2
@@ -18,12 +19,19 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("FileType", { -- 4 Spaces
   group = augroup,
-  pattern = {"python", "css"},
+  pattern = {"python"},
+
   callback = function()
     vim.opt_local.shiftwidth = 4
     vim.opt_local.tabstop = 4
     vim.opt_local.expandtab = true
   end,
+})
+
+-- Treesitter highlighting
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "python", "lua" },
+  callback = function() vim.treesitter.start() end,
 })
