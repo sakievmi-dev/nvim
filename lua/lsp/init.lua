@@ -12,7 +12,7 @@ require("mason").setup()
 local lang_configs = {
   "lsp.languages.lua",
   "lsp.languages.cpp",
-  -- "lsp.languages.python",
+  "lsp.languages.python",
   -- "lsp.languages.html",
   -- "lsp.languages.css",
   -- "lsp.languages.django",
