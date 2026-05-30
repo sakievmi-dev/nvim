@@ -11,4 +11,5 @@ require("nvim-treesitter").install({
   "vim",
   "vimdoc",
   "cpp",
+  "python",
 })
