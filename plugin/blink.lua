@@ -13,7 +13,23 @@ require("blink.cmp").setup({
   completion = {
     documentation = { auto_show = false },
     ghost_text = { enabled = false },
-    menu = { auto_show = false },
+
+    menu = {
+      max_height = 4,
+
+      draw = {
+        columns = {
+          { "kind_icon" },
+          { "label", gap = 1},
+        },
+
+        components = {
+          label = {
+            width = { max = 20 }
+          }
+        }
+      }
+    }
   },
 
   appearance = {
@@ -21,7 +37,7 @@ require("blink.cmp").setup({
   },
 
   sources = {
-    default = { "lsp", "path", "snippets", "buffer" },
+    default = { "lsp", "path", "snippets"},
   },
 
   fuzzy = {
