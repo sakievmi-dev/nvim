@@ -16,6 +16,7 @@ require("neovim-project").setup({
   projects = {
     "~/projects/*",
     "~/.config/nvim/",
+    "~/.config/niri/",
   },
   picker = {
     type = "telescope",
