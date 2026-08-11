@@ -19,5 +19,5 @@ map("n", "<C-=>", function()
 end)
 
 map("n", "<C-->", function()
-  change_scale_factor(1/1.1)
+  change_scale_factor(1 / 1.1)
 end)

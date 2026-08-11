@@ -1,8 +1,9 @@
 local M = {}
 
--- Adding blink for capabilities
+-- Adding plugins
 vim.pack.add({
   "https://github.com/saghen/blink.cmp",
+  "https://github.com/stevearc/conform.nvim",
 })
 
 -- Setup function
@@ -14,8 +15,23 @@ M.setup = function()
   -- clangd
   vim.lsp.config("clangd", {
     capabilities = capabilities,
+    cmd = {
+      "clangd",
+      "--clang-tidy",
+      "--fallback-style=LLVM",
+      "--background-index",
+      "--query-driver=/usr/bin/g++,/usr/bin/gcc",
+      "--compile-commands-dir=build",
+    },
   })
   vim.lsp.enable("clangd")
+
+  -- Formatting
+  require("conform").setup({
+    formatters_by_ft = {
+      cpp = { "clang-format" },
+    },
+  })
 end
 
 M.ensure_installed = {

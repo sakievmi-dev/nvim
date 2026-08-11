@@ -6,7 +6,7 @@ vim.pack.add({
 })
 
 -- Configuration
-require("nvim-treesitter").install({ 
+require("nvim-treesitter").install({
   "lua",
   "vim",
   "vimdoc",

@@ -15,30 +15,30 @@ require("blink.cmp").setup({
     ghost_text = { enabled = false },
 
     menu = {
-      max_height = 4,
+      max_height = 5,
 
       draw = {
         columns = {
           { "kind_icon" },
-          { "label", gap = 1},
+          { "label", gap = 1 },
         },
 
         components = {
           label = {
-            width = { max = 20 }
-          }
-        }
-      }
-    }
+            width = { max = 20 },
+          },
+        },
+      },
+    },
   },
 
   appearance = {
     nerd_font_variant = "mono",
   },
 
-  sources = {
-    default = { "lsp", "path", "snippets"},
-  },
+  -- sources = {
+  --   default = { "lsp", "path", "snippets"},
+  -- },
 
   fuzzy = {
     implementation = "lua",

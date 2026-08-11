@@ -19,15 +19,15 @@ local options = {
 
   -- Characters
   listchars = {
-      nbsp = "␣",
-      tab = "» ",
-      trail = "·"
+    nbsp = "␣",
+    tab = "» ",
+    trail = "·",
   },
   fillchars = {
-      eob = " "
+    eob = " ",
   },
 
-  -- Search 
+  -- Search
   ignorecase = true,
   smartcase = true,
 

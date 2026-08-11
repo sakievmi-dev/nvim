@@ -10,7 +10,7 @@ require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 
   size = 10,
-  direction = 'horizontal',
+  direction = "horizontal",
 
-  shade_terminals = false
+  shade_terminals = false,
 })

@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("FileType", { -- 2 Spaces
 
 vim.api.nvim_create_autocmd("FileType", { -- 4 Spaces
   group = augroup,
-  pattern = {"python"},
+  pattern = { "python" },
 
   callback = function()
     vim.opt_local.shiftwidth = 4
@@ -31,7 +31,9 @@ vim.api.nvim_create_autocmd("FileType", { -- 4 Spaces
 })
 
 -- Treesitter highlighting
-vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd("FileType", {
   pattern = { "python", "lua" },
-  callback = function() vim.treesitter.start() end,
+  callback = function()
+    vim.treesitter.start()
+  end,
 })

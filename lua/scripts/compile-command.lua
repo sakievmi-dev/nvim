@@ -6,7 +6,7 @@ vim.pack.add({
   "https://github.com/folke/which-key.nvim",
 })
 
-local Terminal = require('toggleterm.terminal').Terminal
+local Terminal = require("toggleterm.terminal").Terminal
 local last_compile_term = nil
 local last_cmd = ""
 
@@ -16,7 +16,7 @@ local function wrap_cmd(cmd)
 end
 
 -- [C]ompile [C]ommand
-vim.keymap.set('n', '<leader>cc', function()
+vim.keymap.set("n", "<leader>cc", function()
   -- Entering a compile command
   local cmd = vim.fn.input("Compile command: ", last_cmd)
 
@@ -26,7 +26,9 @@ vim.keymap.set('n', '<leader>cc', function()
     -- Start a new terminal and run a compile command
 
     -- If old terminal is still alive - kill it
-    if last_compile_term then last_compile_term:shutdown() end
+    if last_compile_term then
+      last_compile_term:shutdown()
+    end
 
     -- Start a new terminal and run a compile command
     last_compile_term = Terminal:new({ cmd = wrap_cmd(cmd), close_on_exit = false, hidden = false })
@@ -35,12 +37,14 @@ vim.keymap.set('n', '<leader>cc', function()
 end, { desc = "Compile: Enter command" })
 
 -- [C]ompile [R]epeat
-vim.keymap.set('n', '<leader>cr', function()
+vim.keymap.set("n", "<leader>cr", function()
   if last_cmd ~= "" then
     -- Start a new terminal and run a compile command
-    if last_compile_term then last_compile_term:shutdown() end
+    if last_compile_term then
+      last_compile_term:shutdown()
+    end
 
-      last_compile_term = Terminal:new({ cmd = wrap_cmd(last_cmd), close_on_exit = false, hidden = false })
+    last_compile_term = Terminal:new({ cmd = wrap_cmd(last_cmd), close_on_exit = false, hidden = false })
     last_compile_term:toggle()
   else
     print("No compile command set yet!")

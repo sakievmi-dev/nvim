@@ -3,7 +3,7 @@ vim.pack.add({
   {
     src = "https://github.com/stevearc/oil.nvim",
   },
-  "https://github.com/malewicz1337/oil-git.nvim"
+  "https://github.com/malewicz1337/oil-git.nvim",
 })
 
 -- Configuration
@@ -11,8 +11,8 @@ require("oil").setup({
   skip_confirm_for_simple_edits = true,
 
   view_options = {
-    show_hidden = true
-  }
+    show_hidden = true,
+  },
 })
 
 require("oil-git").setup()

@@ -20,7 +20,7 @@ require("neovim-project").setup({
   },
   picker = {
     type = "telescope",
-  }
+  },
 })
 
 -- Mappings

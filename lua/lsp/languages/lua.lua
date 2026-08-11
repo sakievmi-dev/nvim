@@ -1,8 +1,9 @@
 local M = {}
 
--- Adding blink for capabilities
+-- Adding plugins
 vim.pack.add({
   "https://github.com/saghen/blink.cmp",
+  "https://github.com/stevearc/conform.nvim",
 })
 
 -- Setup function
@@ -30,13 +31,16 @@ M.setup = function()
   })
   vim.lsp.enable("lua_ls")
 
-  -- stylua
-  vim.lsp.enable("stylua")
+  -- Formatting
+  require("conform").setup({
+    formatters_by_ft = {
+      lua = { "stylua" },
+    },
+  })
 end
 
 M.ensure_installed = {
   "lua_ls",
-  "stylua",
 }
 
 return M

@@ -16,4 +16,4 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("t", "<C-q>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- LSP
-map('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP [G]o to [D]efinition' })
+map("n", "gd", vim.lsp.buf.definition, { desc = "LSP [G]o to [D]efinition" })
