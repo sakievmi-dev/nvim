@@ -1,11 +1,7 @@
--- Installation
 vim.pack.add({
-  {
-    src = "https://github.com/akinsho/toggleterm.nvim",
-  },
+  "https://github.com/akinsho/toggleterm.nvim",
 })
 
--- Configuration
 require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 

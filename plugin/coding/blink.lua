@@ -1,4 +1,3 @@
--- Installation
 vim.pack.add({
   {
     src = "https://github.com/saghen/blink.cmp",
@@ -6,16 +5,15 @@ vim.pack.add({
   },
 })
 
--- Configuration
 require("blink.cmp").setup({
-  keymap = { preset = "default" },
+  keymap = { preset = "super-tab" },
 
   completion = {
     documentation = { auto_show = false },
     ghost_text = { enabled = false },
 
     menu = {
-      max_height = 5,
+      max_height = 7,
 
       draw = {
         columns = {

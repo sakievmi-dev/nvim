@@ -1,12 +1,9 @@
--- Installation
 vim.pack.add({
-  {
-    src = "https://github.com/stevearc/oil.nvim",
-  },
+  "https://github.com/stevearc/oil.nvim",
   "https://github.com/malewicz1337/oil-git.nvim",
+  "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
--- Configuration
 require("oil").setup({
   skip_confirm_for_simple_edits = true,
 
@@ -17,5 +14,4 @@ require("oil").setup({
 
 require("oil-git").setup()
 
--- Mappings
 map("n", "<leader>o", "<cmd>e.<cr>", { desc = "[O]il" })
