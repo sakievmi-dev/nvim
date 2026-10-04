@@ -98,3 +98,16 @@ require("mason-lspconfig").setup({
 })
 
 require("lazydev").setup({})
+
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+map("n", "gr", vim.lsp.buf.references, { desc = "References" })
+map("n", "gi", vim.lsp.buf.implementation, { desc = "Implementation" })
+map("n", "gy", vim.lsp.buf.type_definition, { desc = "Type definition" })
+
+map("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
+map("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature help" })
+
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
