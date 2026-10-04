@@ -58,15 +58,37 @@ local servers = {
       },
     },
   },
+
+  ruff = {
+    init_options = {
+      settings = {
+        lint = {
+          select = { "E", "W", "I" },
+        },
+      },
+    },
+  },
+
+  html = {},
+
+  cssls = {},
 }
 
 local ensure_installed = {}
-
 for name, config in pairs(servers) do
   table.insert(ensure_installed, name)
   vim.lsp.config(name, vim.tbl_deep_extend("force", { capabilities = capabilities }, config))
   vim.lsp.enable(name)
 end
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "ruff" then
+      client.server_capabilities.hoverProvider = false
+    end
+  end,
+})
 
 require("mason").setup()
 require("mason-lspconfig").setup({
