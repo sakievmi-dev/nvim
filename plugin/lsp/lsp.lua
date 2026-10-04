@@ -46,18 +46,14 @@ local servers = {
   basedpyright = {
     settings = {
       basedpyright = {
+        disableOrganizeImports = true,
         analysis = {
-          typeCheckingMode = "basic",
-          diagnosticMode = "workspace",
+          typeCheckingMode = "standard",
+          diagnosticMode = "openFilesOnly",
           autoSearchPaths = true,
           useLibraryCodeForTypes = true,
+          autoImportCompletions = true,
           diagnosticSeverityOverrides = {},
-          inlayHints = {
-            variableTypes = false,
-            callArgumentNames = true,
-            functionReturnTypes = false,
-            genericTypes = false,
-          },
         },
       },
     },
