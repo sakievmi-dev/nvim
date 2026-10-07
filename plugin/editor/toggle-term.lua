@@ -5,7 +5,7 @@ vim.pack.add({
 require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 
-  size = 10,
+  size = 12,
   direction = "horizontal",
 
   shade_terminals = false,
