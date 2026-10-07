@@ -8,6 +8,9 @@ vim.pack.add({
 require("blink.cmp").setup({
   keymap = { preset = "super-tab" },
 
+  snippets = { preset = "luasnip" },
+  signature = { enabled = true },
+
   completion = {
     documentation = { auto_show = false },
     ghost_text = { enabled = false },
@@ -23,7 +26,7 @@ require("blink.cmp").setup({
 
         components = {
           label = {
-            width = { max = 20 },
+            width = { max = 35 },
           },
         },
       },
@@ -34,9 +37,9 @@ require("blink.cmp").setup({
     nerd_font_variant = "mono",
   },
 
-  -- sources = {
-  --   default = { "lsp", "path", "snippets"},
-  -- },
+  sources = {
+    default = { "lsp", "path", "snippets" },
+  },
 
   fuzzy = {
     implementation = "lua",
